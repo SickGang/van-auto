@@ -1,0 +1,137 @@
+@import "_variables.scss";
+
+body {
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: 500;
+    zoom: 85%;
+}
+
+a,a:hover  {
+    color: black;
+    text-decoration: none;
+}
+
+.header_contacts {
+    padding: 11px 0px 13px 0px;
+    align-items: center;
+}
+
+.header_contacts-menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header_contacts-menu li:first-child {
+    margin-right: 70px;
+}
+
+.header_phone {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.header_call, .header_call:hover {
+    padding: 10px;
+    border: 3px solid #153049;
+    border-radius: 5px;
+    color: #153049;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.header {
+    background-color: #153049;
+    padding: 20px 0px;
+}
+
+.header_city {
+    display: flex;
+    align-items: center;
+}
+
+.header_city__link,.header_city__link:hover {
+    color: white;
+    font-size: 30px;
+    border-bottom: 1px solid white;
+}
+
+.header_city__arrow {
+    margin-left: 5px;
+}
+
+.header_city-map {
+    margin-top: 10px;
+}
+
+.header_search form {
+    position: relative;
+    width: 864px;
+}
+
+.header_search form input{
+    width: 800px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.header_search form button {
+    position: absolute;
+    height: 50px;
+    width: 65px;
+    background-image: url(../img/search.png);
+    background-repeat: no-repeat;
+    background-color: #FF9F00;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    top: 0;
+    right: 25px;
+    border: none;
+    background-position: center;
+}
+
+.header_links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_link, .header_link:hover {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header_basket {
+    position: relative;
+}
+
+.header_basket::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    height: 70px;
+    width: 3px;
+    background-color: white;
+    left: 35px;
+}
+
+
+.basket_price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    margin-left: 10px;
+}
+
+.basket_price-value {
+    font-size: 16px;
+}
+
+.header_basket-link {
+    display: flex;
+    justify-content: center;
+}

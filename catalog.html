@@ -1,0 +1,1296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <title>Главная</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <div class="">
+        <div class="header_contacts container">
+          <div class="header_mobile-menu-wrapper">
+            <div class="header_mobile-menu">
+              <span></span>
+            </div>
+          </div>
+          <a href="/">
+            <picture>
+              <source srcset="img/logo-mobile.png" media="(max-width: 768px)" />
+              <img src="img/header-logo.png" alt="Ван-Авто">
+            </picture>
+          </a>
+          <div class="header_phone-wrapper">
+            <div class="header_phone">8-800-ХХХ-ХХ-ХХ</div>
+            <div>Круглосуточно</div>
+          </div>
+          <div class="header_call-wrapper">
+            <a class="header_call" href="">Заказать звонок</a>
+          </div>
+          <div class="header_contacts-menu-wrapper">
+            <ul class="header_contacts-menu">
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Покупателям</a></li>
+            </ul>
+          </div>
+          <div class="header_mobile-search" @click="isSearch = !isSearch">
+            <img src="img/search-mobiel.png" alt="">
+          </div>
+          <div class="header_mobile-basket">
+            <img src="img/basket.png" alt="">
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="header-wrapper_sticky">
+        <div class="header header_sticky">
+          <div class="container">
+            <div class="header-wrapper">
+              <div class="header_city">
+                <img class="header_city-map" src="img/map.png" alt="">
+                <a class="header_city__link" href="#">Саратов</a>
+                <img class="header_city__arrow" src="img/arrow.svg" alt="">
+              </div>
+              <div class="header_search">
+                <form>
+                  <input type="text" placeholder="Поиск...">
+                  <button type="submit"></button>
+                </form>
+              </div>
+              <div class="header_links-wrapper">
+                <ul class="header_links">
+                  <li><a class="header_link" href="">Услуги</a></li>
+                  <li><a class="header_link" href="">Доставка</a></li>
+                </ul>
+              </div>
+              <div class="header_basket">
+                <a class="header_basket-link" href="">
+                  <div class="basket">
+                    <img class="basket_img" src="img/basket.svg" alt="">
+                    <span>12</span>
+                  </div>
+                  <div class="basket_price">
+                    Корзина
+                    <div class="basket_price-value">
+                      69 168 ₽
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-wrapper">
+          <div class="container">
+            <ul class="nav">
+              <li>
+                <a href="">
+                  <img src="img/o-nas.png" alt="">
+                  О нас
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/shiny.png" alt="">
+                  Шины
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/diski.png" alt="">
+                  Диски
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/grus-shini.png" alt="">
+                  Грузовые шины
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/moto-shini.png" alt="">
+                  Мотошины
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/akb.png" alt="">
+                  АКБ
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  % Акции
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <transition name="fade">
+        <div class="search-add" v-if="this.isSearch">
+          <div class="search-add_wrapper">
+            <form action="">
+              <div class="search-add_search">
+                <input type="text" placeholder="Поиск">
+              </div>
+              <div class="search-add_btn">
+                  
+              </div>
+            </form>
+          </div>
+        </div>
+      </transition>
+    <section class="catalog-section">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li>Главная</li>
+                    <img src="img/arrow-right_breadcrumbs.svg" alt="">
+                    <li>Каталог</li>
+                    <img src="img/arrow-right_breadcrumbs.svg" alt="">
+                    <li>Авто</li>
+                    <img src="img/arrow-right_breadcrumbs.svg" alt="">
+                    <li>Шины</li>
+                </ul>
+            </div>
+            <div class="catalog__title-wrapper">
+                <div class="catalog__title">
+                    Шины в Саратове
+                </div>
+            </div>
+            <div class="catalog-wrapper">
+                <div class="catalog">
+                    <aside class="catalog__filters filters">
+                      <form class="mobile__filters_add" action="">
+                        <div class="mobile__filters_close" @click="showFilter()">
+                          <img src="img/close.svg" alt="">
+                        </div>
+                        <div class="filters__size filters__size_border">
+                          <div class="filters__title">
+                            Размеры
+                          </div>
+                          <div class="filters__selects">
+                            <div class="filters__select-wrapper">
+                              <div class="filters__select-label">
+                                Ширина
+                              </div>
+                              <div class="filters__select">
+                                <div class="select__toggle">
+                                  <div class="select__value">Все</div>
+                                  <img src="img/arrow-down.svg" alt="">
+                                </div>
+                              </div>
+                              <div class="filter__info">
+                                <span>?</span>
+                              </div>
+                            </div>
+                            <div class="filters__select-wrapper">
+                              <div class="filters__select-label">
+                                Профиль
+                              </div>
+                              <div class="filters__select">
+                                <div class="select__toggle">
+                                  <div class="select__value">Все</div>
+                                  <img src="img/arrow-down.svg" alt="">
+                                </div>
+                              </div>
+                              <div class="filter__info">
+                                <span>?</span>
+                              </div>
+                            </div>
+                            <div class="filters__select-wrapper">
+                              <div class="filters__select-label">
+                                Диаметр
+                              </div>
+                              <div class="filters__select">
+                                <div class="select__toggle">
+                                  <div class="select__value">Все</div>
+                                  <img src="img/arrow-down.svg" alt="">
+                                </div>
+                              </div>
+                              <div class="filter__info">
+                                <span>?</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="filters__btn">
+                            Подобрать по марке автомобиля
+                          </div>
+                        </div>
+                        <div class="filters__price filters__size_border">
+                          <div class="filters__title filters__title_price">
+                            Цена
+                          </div>
+                          <div class="filters__price-wrapper">
+                            <div class="filters__price_range-fields">
+                              <label class="range-fields__from">
+                                <span>От</span>
+                                <div class="range-fields__from_value-container">
+                                  <input class="range-fields__from_value" placeholder="500 ₽">
+                                </div>
+                              </label>
+                              <label class="range-fields__to">
+                                <span>До</span>
+                                <div class="range-fields__to_value-container">
+                                  <input class="range-fields__to_value" placeholder="100 000 ₽">
+                                </div>
+                              </label>
+                            </div>
+                            <div class="filters__price_range">
+                              <div class="filters__price_range-wrapper">
+                                <input type="range">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filters__checkbox filters__size_border">
+                          <div class="filters__title">
+                            Сезонность
+                          </div>
+                          <div class="filters__checkbox-wrapper">
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Лето</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Зима</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filters__checkbox filters__size_border">
+                          <div class="filters__title">
+                            Производитель
+                          </div>
+                          <div class="filters__checkbox-wrapper">
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Nokian</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Pirelli</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Pirelli</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Michelin</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Cordiant</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Continental</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Bridgestone</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Goodyear</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Dunlop</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Viatti</span>
+                            </div>
+                          </div>
+                          <div class="filters__checkbox_all">
+                            <span>Показать все</span>
+                          </div>
+                        </div>
+                        <div class="filters__checkbox filters__size_border">
+                          <div class="filters__checkbox_title">
+                            <div class="filters__title filters__title_checkbox">
+                              Runflat
+                              <div class="filter__info  filter__info_checkbox">
+                                <span>?</span>
+                              </div>
+                            </div>
+                            <div class="filter__arrow  filter__arrow_checkbox">
+                              <img src="img/vector-right.svg" alt="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filters__checkbox filters__size_border">
+                          <div class="filters__checkbox_title">
+                            <div class="filters__title filters__title_checkbox">
+                              Off-Road
+                              <div class="filter__info  filter__info_checkbox">
+                                <span>?</span>
+                              </div>
+                            </div>
+                            <div class="filter__arrow  filter__arrow_checkbox">
+                              <img src="img/vector-right.svg" alt="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filters__checkbox filters__size_border">
+                          <div class="filters__checkbox_title">
+                            <div class="filters__title filters__title_checkbox">
+                              Индекс скорости
+                              <div class="filter__info  filter__info_checkbox">
+                                <span>?</span>
+                              </div>
+                            </div>
+                            <div class="filter__arrow  filter__arrow_checkbox">
+                              <img src="img/vector-right.svg" alt="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filters__checkbox filters__size_border">
+                          <div class="filters__checkbox_title">
+                            <div class="filters__title filters__title_checkbox">
+                              Индекс нагрузки
+                              <div class="filter__info  filter__info_checkbox">
+                                <span>?</span>
+                              </div>
+                            </div>
+                            <div class="filter__arrow  filter__arrow_checkbox">
+                              <img src="img/vector-right.svg" alt="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filters__checkbox">
+                          <div class="filters__title">
+                            Акции
+                          </div>
+                          <div class="filters__checkbox-wrapper">
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Бесплатный шиномонтаж</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Рассрочка 0/0/12</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Расширенная гарантия</span>
+                            </div>
+                            <div class="filters__checkbox-item">
+                              <input type="checkbox">
+                              <div class="filters__checkbox-item_check">
+                                <img src="img/checbox.svg" alt="">
+                              </div>
+                              <span>Второй коплект шин в подарок</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filters__btn-wrapper">
+                          <div class="filters__btn filters__btn_save">
+                            Подобрать
+                          </div>
+                          <div class="filters__reset">
+                            Сбросить фильтры
+                          </div>
+                        </div>
+                      </form>
+                    </aside>
+                    <aside class="mobile__filters" v-show="this.showFilters">
+                    </aside>
+                    <section class="catalog__main-section main-section">
+                        <div class="main-section__banners-wrapper">
+                            <div class="main-section__banners banners">
+                                <div class="banners">
+                                    <img src="img/catalog_banner.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-section__header">
+                            <div class="main-section__mobile-filter" @click="showFilter()">
+                              <a href="#!">Фильтры</a>
+                            </div>
+                            <div class="main-section__header-found">
+                                <span>Найдено: </span>
+                                <span>7200 товаров</span>
+                            </div>
+                            <div class="main-section__header-filters">
+                              <div class="main-section__header-filters_price">
+                                <span>
+                                  Сортировать:
+                                  <a href="">По возрастанию цены</a>
+                                  <img src="img/arrow-down_catalog.svg" alt="">
+                                </span>
+                              </div>
+                              <div class="main-section__header-filters_group">
+                                <span>
+                                  Группировать:
+                                  <a href="">Без группировки</a>
+                                  <img src="img/arrow-down_catalog.svg" alt="">
+                                </span>
+                              </div>
+                            </div>
+                            <div class="main-section__header-filters_mobile-wrapper">
+                              <div class="main-section__header-filters_mobile">
+                                <span>Соритровать</span>
+                                <select name="" id="">
+                                  <option value="">По популярности</option>
+                                  <option value="">По цене (сначала дешевле)</option>
+                                  <option value="">По цене (сначала дороже)</option>
+                                </select>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="main-section_card-list">
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="main-section_card-item product-card">
+                            <div class="product-card__inner">
+                              <div class="product-card__image">
+                                <div class="product-card__image-container">
+                                  <a href="">
+                                    <img src="img/product.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels">
+                                  <a href="">
+                                    <img src="img/snezhinka.png" alt="">
+                                  </a>
+                                  <a href="">
+                                    <img src="img/shipi.png" alt="">
+                                  </a>
+                                </div>
+                                <div class="product-card__labels product-labels__popup">
+                                  <a href="">
+                                    <img src="img/svinka.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="product-card__wrapper">
+                                <div class="product-card__second-group">
+                                  <a href="">
+                                    Nokian Nordman 7 175/65 R14 86T
+                                  </a>
+                                </div>
+                                <div class="product-card__container">
+                                  <div class="product-card__price">
+                                    4323 ₽
+                                  </div>
+                                  <div class="product-card__btn">
+                                    <a href="">В корзину</a>
+                                    <div class="product-card__availibility">
+                                      <input type="checkbox">
+                                      <span>Сравнить</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="catalog__footer">
+                          <div class="catalog__show-more-btn">
+                            <a href="">Показать еще</a>
+                          </div>
+                          <ul class="catalog__pagination pagination-catalog">
+                            <li class="pagination-catalog_arrow-left">
+                              <a href="">
+                                <img src="img/pagination-left.svg" alt="">
+                              </a>
+                            </li>
+                            <li class="pagination-catalog_item">
+                              <a href="">1</a>
+                            </li>
+                            <li class="pagination-catalog_item">
+                              <a href="">2</a>
+                            </li>
+                            <li class="pagination-catalog_item pagination-catalog_item__active">
+                              <a href="">3</a>
+                            </li>
+                            <li class="pagination-catalog_item">
+                              <a href="">4</a>
+                            </li>
+                            <li class="pagination-catalog_item">
+                              <a href="">...</a>
+                            </li>
+                            <li class="pagination-catalog_item">
+                              <a href="">99</a>
+                            </li>
+                            <li class="pagination-catalog_arrow-right">
+                              <a href="">
+                                <img src="img/pagination-right.svg" alt="">
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer class="bg-3">
+      <div class="container">
+        <div class="footer_subscribe">
+          <div class="subscribe-info">
+            <p class="subscribe-info_title">Сэкономьте на покупке шин и дисков</p>
+            <p class="subscribe-info_text">Мы будем присылать информацию о спецпредложениях,
+              акциях и скидках на почту.</p>
+          </div>
+          <div class="subscribe-form">
+            <form action="">
+              <div class="subscribe-form_input">
+                <input type="email" placeholder="Ваш E-Mail...">
+              </div>
+              <label>
+                <input type="checkbox">
+                <p>Я согласен с <a href="">условиями</a> передачи данных</p>
+              </label>
+              <div class="subscribe-form_btn">
+                <button>Подписаться</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="footer_row">
+          <div class="footer_menu">
+            <ul>
+              <li><a href="#">Шины</a></li>
+              <li><a href="#">Диски</a></li>
+              <li><a href="#">Сервис</a></li>
+              <li><a href="#">Шиномонтаж</a></li>
+              <li><a href="#">Ошиповка зимних шин</a></li>
+              <li><a href="#">Бренды</a></li>
+              <li><a href="#">Гарантия</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Оплата</a></li>
+              <li><a href="#">О магазине</a></li>
+              <li><a href="#">Статьи</a></li>
+              <li><a href="#">Акции</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer_hotline">
+            <div class="footer_phone">
+              <img src="img/call.png" alt="">
+              <div class="footer_call-number">
+                <span>8-800-ХХХ-ХХ-ХХ</span>
+                <p>Горячая линяя</p>
+              </div>
+            </div>
+            <div class="footer_call-btn">
+              <a href="">Заказать звонок</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer_coopyright">
+          <p>ВАН-АВТО - интернет-магазин шин и дисков</p>
+          <p>Copyright 2000 - 2020 All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

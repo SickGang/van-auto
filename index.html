@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Главная</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <div class="">
+        <div class="header_contacts container">
+          <div class="header_mobile-menu-wrapper">
+            <div class="header_mobile-menu">
+              <span></span>
+            </div>
+          </div>
+          <a href="/">
+            <picture>
+              <source srcset="img/logo-mobile.png" media="(max-width: 768px)" />
+              <img src="img/header-logo.png" alt="Ван-Авто">
+            </picture>
+          </a>
+          <div class="header_phone-wrapper">
+            <div class="header_phone">8-800-ХХХ-ХХ-ХХ</div>
+            <div>Круглосуточно</div>
+          </div>
+          <div class="header_call-wrapper">
+            <a class="header_call" href="">Заказать звонок</a>
+          </div>
+          <div class="header_contacts-menu-wrapper">
+            <ul class="header_contacts-menu">
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Покупателям</a></li>
+            </ul>
+          </div>
+          <div class="header_mobile-search" @click="isSearch = !isSearch">
+            <img src="img/search-mobiel.png" alt="">
+          </div>
+          <div class="header_mobile-basket">
+            <img src="img/basket.png" alt="">
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="header-wrapper_sticky">
+        <div class="header header_sticky">
+          <div class="container">
+            <div class="header-wrapper">
+              <div class="header_city">
+                <img class="header_city-map" src="img/map.png" alt="">
+                <a class="header_city__link" href="#">Саратов</a>
+                <img class="header_city__arrow" src="img/arrow.svg" alt="">
+              </div>
+              <div class="header_search">
+                <form>
+                  <input type="text" placeholder="Поиск...">
+                  <button type="submit"></button>
+                </form>
+              </div>
+              <div class="header_links-wrapper">
+                <ul class="header_links">
+                  <li><a class="header_link" href="">Услуги</a></li>
+                  <li><a class="header_link" href="">Доставка</a></li>
+                </ul>
+              </div>
+              <div class="header_basket">
+                <a class="header_basket-link" href="">
+                  <div class="basket">
+                    <img class="basket_img" src="img/basket.svg" alt="">
+                    <span>12</span>
+                  </div>
+                  <div class="basket_price">
+                    Корзина
+                    <div class="basket_price-value">
+                      69 168 ₽
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-wrapper">
+          <div class="container">
+            <ul class="nav">
+              <li>
+                <a href="">
+                  <img src="img/o-nas.png" alt="">
+                  О нас
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/shiny.png" alt="">
+                  Шины
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/diski.png" alt="">
+                  Диски
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/grus-shini.png" alt="">
+                  Грузовые шины
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/moto-shini.png" alt="">
+                  Мотошины
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="img/akb.png" alt="">
+                  АКБ
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  % Акции
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <transition name="fade">
+        <div class="search-add" v-if="this.isSearch">
+          <div class="search-add_wrapper">
+            <form action="">
+              <div class="search-add_search">
+                <input type="text" placeholder="Поиск">
+              </div>
+              <div class="search-add_btn">
+                  
+              </div>
+            </form>
+          </div>
+        </div>
+      </transition>
+      <div class="container">
+        <div class="tabs-link_mobile">
+          <a class="tabs-link_mobile-shin" href="">
+            <div>Подобрать шины</div>
+          </a>
+          <a class="tabs-link_mobile-disk" href="">
+            <div>Подобрать диски</div>
+          </a>
+        </div>
+      </div>
+      <div class="index-slider">
+        <div class="container">
+          <div class="slider-content">
+            <div class="tabs">
+              <div class="tabs-link">
+                <span class="tabs-link_item"
+                @click="tabs('shini')"
+                :class="[this.tab == 'shini' ? 'tabs-link_item-active' : '']"
+                >
+                Шины</span>
+                <span class="tabs-link_item"
+                @click="tabs('diski')"
+                :class="[this.tab == 'diski' ? 'tabs-link_item-active' : '']"
+                >Диски</span>
+              </div>
+              <div class="tabs-content">
+                <div class="tabs-content-wrapper"
+                v-if="this.tab == 'shini'"
+                :class="[this.tab == 'shini' ? 'tabs-content-wrapper_active' : '']"
+                >
+                  <form action="">
+                    <div class="tabs-content_toggle">
+                      <span class="tabs-content_toggle_value tabs-content_toggle_value__active">По параметрам</span>
+                      <input type="checkbox" class="checkbox" id="checkbox" />
+                      <label for="checkbox"></label>
+                      <span class="tabs-content_toggle_value">По автомобилю</span>
+                    </div>
+                    <div class="tabs-content_form-fields">
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Ширина
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Профиль
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Диаметр
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Производитель
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Сезонность
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item tabs-content_form-fields_item-btn">
+                        <button type="submit">
+                          Подобрать
+                        </button>
+                      </div>
+                    </div>
+                    <div class="tabs-content_form-link">
+                      <a href="">Где смотреть параметры?</a>
+                    </div>
+                  </form>
+                </div>
+                <div class="tabs-content-wrapper"
+                v-if="this.tab == 'diski'"
+                :class="[this.tab == 'diski' ? 'tabs-content-wrapper_active' : '']">
+                  <form action="">
+                    <div class="tabs-content_toggle">
+                      <span class="tabs-content_toggle_value tabs-content_toggle_value__active">По параметрам</span>
+                      <input type="checkbox" class="checkbox" id="checkbox" />
+                      <label for="checkbox"></label>
+                      <span class="tabs-content_toggle_value">По автомобилю</span>
+                    </div>
+                    <div class="tabs-content_form-fields">
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Диаметр
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Крепеж (PCD)
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Вылет (ET)
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Производитель
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item">
+                        <div class="tabs-content_form-fields_item-wrapper">
+                          <div class="tabs-content_form-fields_item_text">
+                            Тип диска
+                          </div>
+                          <img src="img//arrow-down.svg" alt="">
+                        </div>
+                        <input type="text" hidden>
+                      </div>
+                      <div class="tabs-content_form-fields_item tabs-content_form-fields_item-btn">
+                        <button type="submit">
+                          Подобрать
+                        </button>
+                      </div>
+                    </div>
+                    <div class="tabs-content_form-link">
+                      <a href="">Где смотреть параметры?</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="slider-text-wrapper">
+              <div class="slider-text">
+                <div class="slider-text_text">
+                  <span>Выгодное</span> <br>
+                  <span>Начало сезона</span>
+                </div>
+                <div class="slider-text_link">
+                  <div class="slider-text_btn">
+                    <a href="#">Подробнее</a>
+                  </div>
+                  <div class="slider-text_pagination">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-wrapper">
+        <a class="promo_link" href="#">
+          <div class="promo_item promo_stock">
+            <div class="promo_item-title">
+              Наши акции
+            </div>
+            <div class="promo_item-text">
+              Не упусти выгоду!
+            </div>
+            <div class="promo_item-btn" href="#">
+              <object>
+                <a href="">Перейти</a>
+              </object>
+            </div>
+          </div>
+        </a>
+        <a class="promo_link" href="#">
+          <div class="promo_item promo_tire">
+            <div class="promo_item-title">
+              Запись на шиномонтаж
+            </div>
+            <div class="promo_item-text">
+              Экономьте своё время! <br>
+              Записывайтесь на шиномонтаж онлайн!
+            </div>
+            <div class="promo_item-btn">
+              <object>
+                <a href="">Перейти</a>
+              </object>
+            </div>
+          </div>
+        </a>
+        <a class="promo_link" href="#">
+          <div class="promo_item promo_adress">
+            <div class="promo_item-title">
+              Адреса магазинов в вашем городе
+            </div>
+            <div class="promo_item-btn">
+              <object>
+                <a href="#">Перейти</a>
+              </object>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="bg">
+        <div class="container">
+          <div class="services">
+            <div class="services_title">
+              Сервис и услуги
+            </div>
+            <div class="services_items">
+              <div>
+                <a class="services_item" href="#">
+                  <div class="services_item-icon">
+                    <img src="img/shin.svg" alt="">
+                  </div>
+                  <div class="services_item-title">
+                    Шиномонтаж
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a class="services_item" href="#">
+                  <div class="services_item-icon">
+                    <img src="img/oshipovka.svg" alt="">
+                  </div>
+                  <div class="services_item-title">
+                    Ошиповка шин
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a class="services_item" href="#">
+                  <div class="services_item-icon">
+                    <img src="img/remont.svg" alt="">
+                  </div>
+                  <div class="services_item-title">
+                    Ремонт шин
+                  </div>
+                </a>
+              </div>
+              <div>
+                <a class="services_item" href="#">
+                  <div class="services_item-icon">
+                    <img src="img/pravka.svg" alt="">
+                  </div>
+                  <div class="services_item-title">
+                    Правка дисков
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="stocks">
+            <div class="stocks_title">
+              Акции
+            </div>
+            <div class="stocks_items">
+              <div>
+                <a href="#" class="stocks_item">
+                  <img src="img/stock-1.png" alt="">
+                </a>
+              </div>
+              <div>
+                <a href="#" class="stocks_item">
+                  <img src="img/stock-2.png" alt="">
+                </a>
+              </div>
+              <div>
+                <a href="#" class="stocks_item">
+                  <img src="img/stock-3.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="stocks_brands">
+              <div class="stocks_brands-link">
+                <a href="#">
+                  Все бренды <img src="img/arrow-right.svg" alt="">
+                </a>
+              </div>
+              <div class="stocks_brands-items">
+                <div class="stocks_brands-item">
+                  <a href="#">
+                    <img src="img/nokian.png" alt="">
+                  </a>
+                </div>
+                <div class="stocks_brands-item">
+                  <a href="#">
+                    <img src="img/michelin.png" alt="">
+                  </a>
+                </div>
+                <div class="stocks_brands-item">
+                  <a href="#">
+                    <img src="img/bridgestone.png" alt="">
+                  </a>
+                </div>
+                <div class="stocks_brands-item">
+                  <a href="#">
+                    <img src="img/dunlop.png" alt="">
+                  </a>
+                </div>
+                <div class="stocks_brands-item">
+                  <a href="#">
+                    <img src="img/continental.png" alt="">
+                  </a>
+                </div>
+                <div class="stocks_brands-item">
+                  <a href="#">
+                    <img src="img/hankook.png" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-2">
+        <div class="container">
+          <div class="about">
+            <div class="about_title">
+              О нас
+            </div>
+            <div class="about_content">
+              <p>
+                Шинный центр «ВАН-АВТО» был основан в 2000г. Основным направлением деятельности была продажа запасных
+                частей для автомобилей, шин и дисков в Саратове. С 2004 года в компании стали активно развиваться
+                направления автомобильных шин и дисков. На сегодняшний день Шинный центр «ВАН-АВТО» является серьезным
+                игроком на рынке шин и дисков благодаря энергичности, коммуникабельности и сплоченности всего
+                коллектива.
+              </p>
+              <p>
+                «ВАН-АВТО» - молодая и гибкая организация. Мы стремимся постоянно развиваться и совершенствоваться,
+                предлагая своим оптовым и розничным клиентам самые низкие цены на высококачественные товары и услуги.
+                Недаром в списке наших постоянных клиентов числятся множество автосалонов, оптовых клиентов и целая
+                армия розничных покупателей, которым мы всегда рады.
+              </p>
+              <p>
+                За довольно короткое время работы наша организация смогла наладить партнерские отношения с
+                производителями шин мирового уровня. Нашими поставщиками являются крупные организации Финляндии,
+                Германии и Китая, с которыми мы успешно сотрудничаем на протяжении нескольких лет. За счет большого
+                товарооборота и широкого ассортимента мы можем предоставить нашим клиентам наиболее выгодные цены не
+                только в Саратовской области, но и в России в целом.
+              </p>
+              <div class="about_content-next">
+                Читать даллее <img src="img/arrow-down.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-3">
+      <div class="container">
+        <div class="footer_subscribe">
+          <div class="subscribe-info">
+            <p class="subscribe-info_title">Сэкономьте на покупке шин и дисков</p>
+            <p class="subscribe-info_text">Мы будем присылать информацию о спецпредложениях,
+              акциях и скидках на почту.</p>
+          </div>
+          <div class="subscribe-form">
+            <form action="">
+              <div class="subscribe-form_input">
+                <input type="email" placeholder="Ваш E-Mail...">
+              </div>
+              <label>
+                <input type="checkbox">
+                <p>Я согласен с <a href="">условиями</a> передачи данных</p>
+              </label>
+              <div class="subscribe-form_btn">
+                <button>Подписаться</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="footer_row">
+          <div class="footer_menu">
+            <ul>
+              <li><a href="#">Шины</a></li>
+              <li><a href="#">Диски</a></li>
+              <li><a href="#">Сервис</a></li>
+              <li><a href="#">Шиномонтаж</a></li>
+              <li><a href="#">Ошиповка зимних шин</a></li>
+              <li><a href="#">Бренды</a></li>
+              <li><a href="#">Гарантия</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Оплата</a></li>
+              <li><a href="#">О магазине</a></li>
+              <li><a href="#">Статьи</a></li>
+              <li><a href="#">Акции</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer_hotline">
+            <div class="footer_phone">
+              <img src="img/call.png" alt="">
+              <div class="footer_call-number">
+                <span>8-800-ХХХ-ХХ-ХХ</span>
+                <p>Горячая линяя</p>
+              </div>
+            </div>
+            <div class="footer_call-btn">
+              <a href="">Заказать звонок</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer_coopyright">
+          <p>ВАН-АВТО - интернет-магазин шин и дисков</p>
+          <p>Copyright 2000 - 2020 All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
