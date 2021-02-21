@@ -1,4 +1,4 @@
-## Верстка сайта van-auto
+## Верстка сайта van-auto (в разработке)
 ### [Главная страница](http://van-auto.web-kitmedia.ru/)
 ### [Каталог](http://van-auto.web-kitmedia.ru/catalog.html)
 ### [Корзина](http://van-auto.web-kitmedia.ru/basket.html)
